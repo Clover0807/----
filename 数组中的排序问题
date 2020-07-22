@@ -1,1 +1,24 @@
-
+*/已知数组声明为”int a[6] = {10, 20, 30, 40, 50};”,前五个数组元素是按升序排列的，输入一个整数并插入到数组a中，要求六个数组元素是按升序排列的，输出数组*/
+#include<stdio.h>
+  
+   int main(void)
+  {
+      int i, n, m;
+      int a[6] = {10, 20, 30, 40, 50};
+       printf("Input an integer: ");
+       scanf("%d", &n);
+       for (i = 0; i < 6 - 1; i++)
+          if (a[i] > n)
+              break;
+      cur = i;
+      //将a[4]~a[m]依次后移
+      for (i = 6 - 2; i >= cur; i--)
+          a[i + 1] = a[i];
+      //将n 插入到a[m]
+      a[m] = n;
+      for (i = 0; i < 6; i++)
+          printf("%5d", a[i]);
+      printf("\n");
+ 
+      return 0;
+  }
